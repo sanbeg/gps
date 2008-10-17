@@ -1,0 +1,48 @@
+constant header
+6 bytes
+
+category
+	poi
+	poi
+	...
+category
+	...
+
+
+
+each POI = 84 bytes
+     name = 35 chars + \0
+     description = 35 chars + \0
+     long = long, lat = long, alt = ushort, checksum? = 2 bytes
+
+2 bytes at end of file?
+ 
+name \0 descr \0 long lat 
+
+------------------------------
+
+categories:
+
+     name = 35 chars + \0
+     description = 35 chars + \0
+     # of poi in group = 2 bytes
+     verify # of poi in group = 2 bytes
+     alert (4 btes, on=257, off=1)
+     detection angle (4 bytes)
+
+     alert1 distance = 2 bytes
+     alert1 name = 35 chars + \0
+     alert2 distance = 2 bytes
+     alert2 name = 35 chars + \0
+
+     constant string "gb".
+     image = 35 chars + \0 
+
+     10 unknown bytes
+     16 bytes (4 long) bounding box.
+     6 bytes + 8 bytes/POI unknown
+
+
+
+display on map screen check box
+
