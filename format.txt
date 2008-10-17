@@ -41,6 +41,9 @@ categories:
      10 unknown bytes
      16 bytes (4 long) bounding box.
      6 bytes + 8 bytes/POI unknown
+       poi bytes maybe - 2 byte seq number (0,1,2...), 2 byte 0 if last,
+       else 1. 2 unknown.  
+       Alternate bytes in both seem to be 0, so could all be short.
 
 
 

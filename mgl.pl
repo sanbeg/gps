@@ -97,10 +97,14 @@ sub next_cat {
     };
     read FH, $unk, 6;
     print_unknown($unk);
-    
-    read FH, $unk, 8*($npoi);
-    print_unknown($unk);
 
+    for (1..$npoi) {
+	read FH, $unk, 4;
+	my ($seqno,$more) = unpack 'SS', $unk;
+	print "   #$seqno, more=$more\t";
+	read FH, $unk, 4;
+	print_unknown($unk);
+    }
 
 #     read FH, $unk,8*$npoi;
 #     my @off = unpack "l" x ($npoi*2), $unk;
